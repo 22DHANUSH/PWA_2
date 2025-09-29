@@ -1,0 +1,21 @@
+
+
+name: $(Build.DefinitionName)-$(Date:yyyyMMdd)$(Rev:.r)
+resources:
+  repositories:
+  - repository: 'az-pipelines-templates' # Name of the repository
+    type: github # github for GitHub repo's git for ADO repo's
+    endpoint: 'columbia1938 (1)' # name of the ado service connection usually columbia1938-<ProjectName>
+    name: 'columbia1938/az-pipelines-templates' # org/repo
+
+trigger:
+  branches:
+    include:
+      - 'main'
+  paths:
+    include:
+      - /.vsts-ci/definitions/csc-docs.yml
+      - /docs/*
+
+jobs:
+  - template: templates/csc-docs.template.yml@az-pipelines-templates
