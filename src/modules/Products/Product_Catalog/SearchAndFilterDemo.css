@@ -1,0 +1,30 @@
+.mobile-filter-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.mobile-filter-header .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+ 
+.mobile-filter-body {
+  padding: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 60px);
+}
+ 
+/* Mobile-only filter button */
+@media (min-width: 768px) {
+  .filter-btn-mobile {
+    display: none;
+  }
+}

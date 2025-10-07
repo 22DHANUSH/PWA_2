@@ -1,0 +1,121 @@
+.address-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 24px 0;
+}
+
+.address-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* === Header === */
+.address-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.address-title {
+  margin: 0;
+}
+
+.add-address-button {
+  background-color: black !important;
+  border-color: black !important;
+  font-weight: 500;
+}
+
+.address-card {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.address-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.address-card-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.primary-label {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.address-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.primary-tag {
+  background: #d0d0d0;
+  color: #000;
+  border-radius: 12px;
+  font-size: 10px;
+  padding: 2px 8px;
+  margin: 0;
+}
+
+.action-icon {
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+}
+
+.address-details {
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+}
+
+.address-details p {
+  margin: 2px 0;
+  line-height: 1.8;
+}
+
+.set-primary {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #7c7b7b;
+  cursor: pointer;
+}
+
+.primary-address-wrapper {
+  margin-bottom: 24px;
+}
+
+.modal-ok-button {
+  background-color: black !important;
+  border-color: black !important;
+  color: white !important;
+}
+
+.use-location-button {
+  margin-bottom: 16px;
+}
+
+.map-container {
+  height: 300px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+.address-card {
+  background-color: #fff !important; /* ensures white background */
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}

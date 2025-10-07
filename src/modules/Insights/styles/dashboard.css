@@ -1,0 +1,49 @@
+.dashboard {
+  display: flex;
+  font-family: sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  background: #f4f4f4;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.sidebar li.active {
+  background: #007bff;
+  color: white;
+}
+
+.main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.metrics-panel,
+.insight-panel {
+  margin-top: 1rem;
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.insight-card {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.filters-bar {
+  display: flex;
+  gap: 1rem;
+}

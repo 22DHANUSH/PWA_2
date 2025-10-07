@@ -1,0 +1,25 @@
+name: CampusHires2025_Ecommerce_UI
+id: ari:cloud:compass:2caf52b4-1fe8-4345-8c1b-025bccf700fc:component/59f782fc-ddd5-43a7-a877-878dc955cc8f/fcb282b6-5dc1-4524-b383-0b01a785d061
+description: null
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/columbia1938/CampusHires2025_Ecommerce_UI
+relationships:
+  DEPENDS_ON: []
+labels:
+  - source:github
+customFields:
+  - name: API Audience
+    type: single_select
+    value: null
+  - name: Domain
+    type: text
+    value: null
+  - name: Requires review
+    type: boolean
+    value: false

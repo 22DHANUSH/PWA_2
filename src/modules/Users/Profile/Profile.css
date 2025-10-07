@@ -1,0 +1,45 @@
+/* Profile Page Container */
+.profile-page {
+  background: #f5f5f5;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Profile Card */
+.profile-card {
+  max-width: 700px;
+  max-height: px;
+  margin: 0 auto;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 24px;
+}
+
+/* Title */
+.profile-title {
+  text-align: center;
+  margin-bottom: 1rem !important;
+}
+
+/* Avatar */
+.profile-avatar {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.profile-avatar-upload {
+  margin-top: 1rem;
+}
+
+
+.spacing{
+    margin-Bottom: 1rem;
+}
+.btn-grey {
+  width: 180px; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 8px; 
+}
