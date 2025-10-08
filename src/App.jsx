@@ -5,6 +5,7 @@ import HeaderNav from "./modules/Products/Product_Landing/Components/HeaderNav";
 import SiteFooter from "./modules/Products/Product_Landing/Components/SiteFooter";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
+import FloatingChatbot from "./modules/Chatbot/FloatingChatbot";
 
 export default function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ export default function App() {
         {!shouldHideLayout && <HeaderNav />}
         <main className="main-content">
           <RouteItems />
+          <FloatingChatbot/>
         </main>
         {!shouldHideLayout && <SiteFooter />}
       </div>

@@ -1,0 +1,266 @@
+/* --- Floating Button --- */
+.floating-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1001;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  background: #636363;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+
+.floating-btn:hover {
+  transform: scale(1.05);
+}
+
+/* --- Overlay --- */
+.chat-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* --- Chat Window --- */
+.chatbot-container {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 400px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+/* --- Header --- */
+.chatbot-header {
+  background: #040404;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header Text {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.chatbot-header .close-btn {
+  color: #fff !important;
+  font-size: 18px;
+}
+
+/* --- Message Section --- */
+.chatbot-messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  background: #f9fafb;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+.chatbot-messages::-webkit-scrollbar {
+  width: 6px;
+}
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/* --- Message Layout --- */
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.chat-message.user {
+  flex-direction: row-reverse;
+}
+
+/* Avatar Styles */
+.chat-avatar {
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.bot-avatar {
+  background-color: #1677ff;
+  color: #fff;
+}
+
+.user-avatar {
+  background-color: #444;
+  color: #fff;
+}
+
+/* --- Message Bubbles --- */
+.message-bubble {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 75%;
+  word-break: break-word;
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.message-bubble.assistant {
+  background: #e6f0ff;
+  color: #000;
+  border-bottom-left-radius: 4px;
+}
+
+.message-bubble.user {
+  background: #1677ff;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+/* --- Product Card --- */
+.product-card {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.product-card-content {
+  display: flex;
+  gap: 12px;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-title {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.product-title:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+.chatbot-footer {
+  padding: 10px;
+  border-top: 1px solid #f0f0f0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Listening / Speaking Status --- */
+.speaking-card {
+  text-align: center;
+  margin-top: 8px;
+  background: #e6f0ff;
+}
+
+.loading-spin {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* --- Animations --- */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Tablet Modal (Center Half Screen) --- */
+@media (max-width: 768px) and (min-width: 600px) {
+  .chat-overlay {
+    display: block;
+  }
+
+  .chatbot-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 50%;
+    bottom: auto;
+    right: auto;
+    border-radius: 16px;
+  }
+}
+
+/* --- Mobile Fullscreen --- */
+@media (max-width: 600px) {
+  .chat-overlay {
+    display: block;
+  }
+
+  .chatbot-container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: none;
+    border-radius: 0;
+  }
+
+  .floating-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .chatbot-header {
+    padding: 12px;
+  }
+
+  .chatbot-footer {
+    padding: 8px;
+  }
+
+  .message-bubble {
+    font-size: 14px;
+  }
+}

@@ -5,6 +5,7 @@ import {
   MenuOutlined,
   CloseOutlined,
   EnvironmentOutlined,
+  PieChartOutlined 
 } from "@ant-design/icons";
 import { Input, Badge } from "antd";
 import { Link, useLocation } from "react-router-dom";
@@ -13,7 +14,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useCart } from "../../../Cart/CartContext";
 import "../HeaderNav.css";
-
+ 
 export default function HeaderNav() {
   const location = useLocation();
   const email = useSelector((state) => state.auth.email);
@@ -22,7 +23,7 @@ export default function HeaderNav() {
   const isLoginPage = location.pathname === "/login";
   const hideSearch = location.pathname.startsWith("/products") || isLoginPage;
   const [menuOpen, setMenuOpen] = useState(false);
-
+ 
   useEffect(() => {
     if (email && email.length > 0) {
       setEmailInitial(email.charAt(0).toUpperCase());
@@ -30,7 +31,7 @@ export default function HeaderNav() {
       setEmailInitial("");
     }
   }, [email]);
-
+ 
   return (
     <header className="sticky-header">
       <div className="container nav-bar">
@@ -42,7 +43,7 @@ export default function HeaderNav() {
               className="logo-img"
             />
           </Link>
-
+ 
           <button
             className="nav-toggle"
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -50,7 +51,7 @@ export default function HeaderNav() {
           >
             {menuOpen ? <CloseOutlined /> : <MenuOutlined />}
           </button>
-
+ 
           <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
             <Link to="/" onClick={() => setMenuOpen(false)}>
               Home
@@ -58,15 +59,35 @@ export default function HeaderNav() {
             <Link to="/products" onClick={() => setMenuOpen(false)}>
               Collections
             </Link>
-          </nav>
-        </div>
-
-        {!isLoginPage && (
-          <div className="nav-actions">
+             {email == "Admin@gmail.com" ?
+             <><Link to="/analytics">
+              <PieChartOutlined style={{ marginRight: "6px" }} />
+              Analytics
+            </Link>
+ 
+            <Link to="/map">
+              <EnvironmentOutlined style={{ marginRight: "6px" }} />
+              Stores Nearby
+           
+            </Link>
+            </>
+            :
             <Link to="/map">
               <EnvironmentOutlined style={{ marginRight: "6px" }} />
               Stores Nearby
             </Link>
+ 
+            }
+            
+
+          </nav>
+        </div>
+ 
+        {!isLoginPage && (
+          <div className="nav-actions">
+           
+           
+           
             <Link to="/wishlist" className="icon-btn" aria-label="Wishlist">
               <HeartOutlined />
             </Link>
@@ -88,3 +109,4 @@ export default function HeaderNav() {
     </header>
   );
 }
+ 
