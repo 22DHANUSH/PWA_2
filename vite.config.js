@@ -1,13 +1,3 @@
-// import { defineConfig } from 'vite'
-// import react from '@vitejs/plugin-react'
-
-// export default defineConfig({
-//   plugins: [react()],
-//   optimizeDeps: {
-//     include: ['redux-persist'],
-//   },
-// })
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
@@ -17,6 +7,9 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
+      devOptions: {
+        enabled: true,
+      },
       workbox: {
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 5 MB
       },
